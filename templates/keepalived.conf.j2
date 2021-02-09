@@ -1,0 +1,14 @@
+global_defs { 
+  router_id {{ ansible_nodename }} 
+}
+
+vrrp_instance vrrp_k8s_master {
+   virtual_router_id {{ ansible_default_ipv4.address.split('.')[-1][-2:] }}
+   interface {{ keepalived_iface }}
+   state {{ keepalived_state }}
+   priority {{ keepalived_priority }}
+
+   virtual_ipaddress {
+      {{ keepalived_vip }}
+   }
+} 
