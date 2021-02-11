@@ -1,2 +1,7 @@
 ---
+galaxy_info:
+  author: bconotte
+  role_name: install-keepalived
+  description: Role install Keepalived for Kubernetes Master node
+  license: Apache2.0
 ...
